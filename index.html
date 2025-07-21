@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <title>🔥 Street Food Combo — Шаурма | Бургеры | Обед | Фудтрак</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ХЕДЕР ШАУРМА -->
+  <header id="shawarma" class="section">
+    <h1> Шаурмечная 24/7</h1>
+    <p>Сочная, свежая и всегда горячая!</p>
+    <a href="#order" class="btn">Заказать шаурму</a>
+  </header>
+
+  <!-- БУРГЕРЫ -->
+  <section id="burgers" class="section">
+    <h2>🍔 Наши бургеры</h2>
+    <video src="меню бургеров1.mp4" autoplay muted loop class="video-bg"></video>
+    <div class="cards">
+      <div class="card">
+        <img src="гамбургер2.jpeg" alt="Бургер Классик" />
+        <h3>Классик</h3>
+        <p>100% говядина, сыр, свежие овощи.</p>
+      </div>
+      <div class="card">
+        <img src="бургер1.jpg" alt="Бургер BBQ" />
+        <h3>BBQ</h3>
+        <p>Сочный с дымком и фирменным соусом.</p>
+      </div>
+    </div></br>
+    <a href="#order" class="btn">Заказать бургер</a>
+  </section>
+
+  <!-- ОБЕД ЗА МИНУТУ -->
+  <section id="lunch" class="section">
+    <h2>🥙 Обед за минуту</h2>
+    <p>Не хочешь ждать? Забирай вкусный обед моментально!</p>
+    <div class="cards">
+      <div class="card">
+        <img src="салат1.jpg" alt="Салат" />
+        <h3>Салат дня</h3>
+      </div>
+      <div class="card">
+        <img src="супчик.jpeg" alt="Супчик" />
+        <h3>Супчик</h3>
+      </div>
+      <div class="card">
+        <img src="ланч ролл5.jpg" alt="Ланч-ролл" />
+        <h3>Ланч-ролл</h3>
+      </div>
+    </div></br>
+    <a href="#order" class="btn">Забронировать обед</a>
+  </section>
+
+  <!-- ФУДТРАК -->
+  <section id="foodtruck" class="section">
+    <h2>🚚 Фудтрак «Закуси на ходу»</h2>
+    <p>Яркий вкус уличной еды — всегда с тобой!</p>
+    <div class="cards">
+      <div class="card">
+        <img src="хотдог.jpg" alt="Хот-дог" />
+        <h3>Хот-дог</h3>
+      </div>
+      <div class="card">
+        <img src="фри.jpeg" alt="Картошка Фри" />
+        <h3>Картошка Фри</h3>
+      </div>
+      <div class="card">
+        <img src="кофе.jpg" alt="Кофе" />
+        <h3>Кофе</h3>
+      </div>
+    </div></br>
+    <a href="https://yandex.ru/map-widget/v1/?text=Жалал-Абад%2C%20Проспект%20Байзакова&ll=72.792883%2C40.933353&z=16&l=map	" class="btn">Найти нас на карте</a>
+  </section>
+
+  <!-- АВТОРСКАЯ ШАУРМА -->
+  <section id="signature" class="section">
+    <h2>🌯 Один хештег — одна шаурма</h2>
+    <p>Авторская шаурма с уникальным рецептом и соусами.</p>
+    <img src="шаурма.jpeg" alt="Авторская шаурма" class="signature-img"/></br>
+    <a href="#order" class="btn">Закажи прямо сейчас</a>
+  </section>
+
+  <!-- ФОРМА ЗАКАЗА -->
+  <section id="order" class="section order-section">
+    <h2>📦 Оформить заказ</h2>
+    <form id="orderForm">
+      <input type="text" id="name" placeholder="Ваше имя" required />
+      <input type="tel" id="phone" placeholder="Телефон" required pattern="[\+0-9\s\-]{5,}" />
+      <textarea id="orderDetails" placeholder="Что хотите заказать?" rows="4"></textarea>
+      <button type="submit" class="btn">Отправить заказ</button>
+    </form>
+    <p>💬 Или напишите нам в <a href="https://t.me/abdushukur0v" target="_blank">Telegram</a> или <a href="https://wa.me/996 555 506 103" target="_blank">WhatsApp</a></p>
+  </section>
+
+  <!-- КОНТАКТЫ -->
+<section id="contacts" class="section">
+  <h2>📍 Где нас найти</h2>
+  <p>Проспект Байзакова, город Жалал-Абад — Ждём тебя всегда!</p>
+  <iframe 
+    src="https://yandex.ru/map-widget/v1/?text=Жалал-Абад%2C%20Проспект%20Байзакова&ll=72.792883%2C40.933353&z=16&l=map" 
+    width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy">
+  </iframe>
+</section>
+
+  <!-- ПОДВАЛ -->
+  <footer>
+    <p>© 2025 Шаурмечная. Все права защищены.</p>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+  // Плавный скролл по якорям
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', e => {
+    e.preventDefault();
+    const target = document.querySelector(anchor.getAttribute('href'));
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth' });
+    }
+  });
+});
+
+// Обработка формы заказа
+document.getElementById('orderForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const name = this.name.value.trim();
+  const phone = this.phone.value.trim();
+
+  if (!name || !phone) {
+    alert('Пожалуйста, заполните имя и телефон.');
+    return;
+  }
+
+  // Здесь можно добавить интеграцию с EmailJS, Telegram, сервером и т.п.
+
+  alert(Спасибо, ${name}! Ваша заявка принята. Мы скоро свяжемся по телефону: ${+996 555 506 103});
+
+  this.reset();
+});
+
+</script>
+</body>
+</html>	
